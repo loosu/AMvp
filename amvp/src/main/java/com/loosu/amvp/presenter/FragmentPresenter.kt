@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.loosu.kmvp.view.IDelegate
 
+/**
+ * 解耦层 Fragment 基类
+ */
 abstract class FragmentPresenter<T : IDelegate> : Fragment() {
 
     protected var mViewDelegate: T? = null

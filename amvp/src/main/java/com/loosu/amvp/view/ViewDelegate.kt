@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+/**
+ * 视图层代理抽象类
+ */
 abstract class ViewDelegate : IDelegate {
 
     override var rootView: View? = null
@@ -20,7 +23,7 @@ abstract class ViewDelegate : IDelegate {
     abstract fun getRootLayoutId(): Int
 
     override fun init() {
-
+        // 子类实现
     }
 
     override fun <T : View> getViewById(viewId: Int): T {
@@ -30,6 +33,12 @@ abstract class ViewDelegate : IDelegate {
             views.put(viewId, view)
         }
         return view as T
+    }
+
+    override fun setEnable(enable: Boolean, vararg viewIds: Int) {
+        viewIds.forEach {
+            getViewById<View>(it).isEnabled = enable
+        }
     }
 
     override fun setOnClickListener(listener: View.OnClickListener?, vararg viewIds: Int) {

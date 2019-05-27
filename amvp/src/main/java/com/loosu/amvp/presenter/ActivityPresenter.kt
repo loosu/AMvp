@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.loosu.kmvp.view.IDelegate
 
+/**
+ * 解耦层 Activity 基类
+ */
 abstract class ActivityPresenter<T : IDelegate> : AppCompatActivity() {
 
     protected var mViewDelegate: T? = null
