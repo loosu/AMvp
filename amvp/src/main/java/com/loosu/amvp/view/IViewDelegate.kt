@@ -8,15 +8,19 @@ import android.view.ViewGroup
 /**
  * 视图层代理接口
  */
-interface IDelegate {
+interface IViewDelegate {
 
+    /**
+     * 视图代理的根部
+     */
     var rootView: View?
+
 
     fun create(layoutInflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
 
     fun init()
 
-    fun <T : View> getViewById(viewId: Int): T
+    fun <T : View> findViewById(viewId: Int): T
 
     fun setEnable(enable: Boolean, vararg viewIds: Int)
 

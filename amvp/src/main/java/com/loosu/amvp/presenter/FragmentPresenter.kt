@@ -5,12 +5,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.loosu.kmvp.view.IDelegate
+import com.loosu.kmvp.view.IViewDelegate
 
 /**
  * 解耦层 Fragment 基类
  */
-abstract class FragmentPresenter<T : IDelegate> : Fragment() {
+abstract class FragmentPresenter<T : IViewDelegate> : Fragment() {
 
     protected var mViewDelegate: T? = null
 

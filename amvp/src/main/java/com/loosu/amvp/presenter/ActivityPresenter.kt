@@ -2,12 +2,12 @@ package com.loosu.kmvp.presenter
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.loosu.kmvp.view.IDelegate
+import com.loosu.kmvp.view.IViewDelegate
 
 /**
  * 解耦层 Activity 基类
  */
-abstract class ActivityPresenter<T : IDelegate> : AppCompatActivity() {
+abstract class ActivityPresenter<T : IViewDelegate> : AppCompatActivity() {
 
     protected var mViewDelegate: T? = null
 
